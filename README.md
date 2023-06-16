@@ -61,3 +61,21 @@ These target input management options give you flexibility in selecting targets 
 - `-oG <file>`: Save scan results in grepable format to the given filename.
 - `-oA <basename>`: Save scan results in normal, XML, and grepable formats with the specified basename.
 
+
+## NSE
+
+- `-sC`: This option is the shorthand version of `--script=default`, indicating that the default set of scripts will be executed during the scan.
+
+- `--script=<Lua scripts>`: Allows you to specify a comma-separated list of directories, script files, or script categories in Lua scripting language.
+
+- `--script-args=<n1=v1,[n2=v2,...]>`: Provides arguments to the scripts being executed. Arguments are passed in the format `name=value`, separated by commas.
+
+- `--script-args-file=filename`: Specifies a file that contains arguments for NSE scripts. Each argument should be in the `name=value` format, with one argument per line.
+
+- `--script-trace`: Enables the display of all data sent and received during the script scanning process, helpful for debugging and analysis.
+
+- `--script-updatedb`: Triggers an update of the script database, ensuring it is up to date with the latest information about available scripts.
+
+- `--script-help=<Lua scripts>`: Shows help documentation and information about the specified Lua scripts, including details, examples, and usage instructions.
+
+These options provide flexibility in customizing the script scanning process, such as specifying scripts, passing arguments, enabling trace output, updating the script database, and accessing help information.
