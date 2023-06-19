@@ -1,0 +1,32 @@
+Portocol Filter
+    ip.addr==(192.168.1.0/24) and tcp.port not in {10,85} 
+    arp
+    http
+    ip
+    udp
+    udp.port==50
+    tcp
+    tcp.port==80
+    
+conversion filter
+    (ip.addr==192.168.1.0/24 or ip.dst=192.168.1.0/24) and not (tcp.port==10 or tcp.port==85) and (arp or http or ip or udp or udp port 50 or tcp or tcp port 80)
+
+Operators in Filters
+    ==  !   ||   &&   >  <
+    eq not  or  and   gt lt
+    
+    ip.addr eq 192.168.1.0 && tcp.port eq 80
+    
+    !(ip.addr eq 192.168.1.0 && udp.port eq 5)
+    !(arp or stp or lldp)
+
+    !(eth.dst == ff:ff:ff:ff) --> no broadcast
+
+Specail operators
+    contains(string) :  frame contains google
+
+    matches(regex) 
+        http.host matches"\.(com|org|net)"
+
+    in {range} :  tcp.port in{10,61} 
+           
